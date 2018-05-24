@@ -20,7 +20,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /***/ "./src/app/app.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "@import \"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700\";\n\n@import url('https://fonts.googleapis.com/css?family=Questrial|Raleway|Source+Sans+Pro');\n\nbody { margin:0;\n    padding:0;\n    font-family: 'Poppins', sans-serif;\n    background: #fafafa;}\n\n.wrapper {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: stretch;\n        -ms-flex-align: stretch;\n            align-items: stretch;\n    height: 100vh !important;    \n}\n\n#menu > .list-group-item {\n    color: black !important;\n    border: none !important;\n    margin-bottom: none !important;\n}\n\n#menu > .list-group-item:first-child {\n    border-top-left-radius: 0px !important;\n    border-top-right-radius: 0px !important;\n}\n\n#content {\n    padding: 0px;\n}\n\n#sidebar {\n    position: absolute;\n    z-index: 1000;\n    text-align: center !important;\n    width: 100%;\n    top: 16px;\n}\n\n#menu .pp-tab {\n    background-color: white !important;\n    padding: 10px !important;\n}\n\n#sidebar ul li a {\n    font-family: 'Questrial', sans-serif !important;\n}\n\nbody {\n    font-family: 'Source Sans Pro', sans-serif;\n    background: #fafafa;\n}\n\np {\n    font-family: 'Source Sans Pro', sans-serif;\n    font-size: 1.1em;\n    font-weight: 300;\n    line-height: 1.7em;\n    color: #999;\n}\n\n.mapboxgl-popup {\n    max-width: 400px;\n    font-family: 'Source Sans Pro', sans-serif;\n}\n\n#sidebar .active {\n    background-color: #30AABB !important;\n    border-color: #30AABB !important;\n}\n\n#map .mapboxgl-ctrl-bottom-right {\n    display: none !important;\n}"
+module.exports = "@import \"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700\";\n\n@import url('https://fonts.googleapis.com/css?family=Questrial|Raleway|Source+Sans+Pro');\n\nbody { margin:0;\n    padding:0;\n    font-family: 'Poppins', sans-serif;\n    background: #fafafa;}\n\n.wrapper {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: stretch;\n        -ms-flex-align: stretch;\n            align-items: stretch;\n    height: 100vh !important;    \n}\n\n#menu {\n    margin-top: 18px !important;\n}\n\n#menu > .list-group-item {\n    color: black !important;\n    border: none !important;\n    margin-bottom: none !important;\n}\n\n#menu > .list-group-item:first-child {\n    border-top-left-radius: 0px !important;\n    border-top-right-radius: 0px !important;\n}\n\n#content {\n    padding: 0px;\n}\n\n#sidebar {\n    position: absolute;\n    z-index: 1000;\n    text-align: center !important;\n    width: 100%;\n}\n\n#menu .pp-tab {\n    background-color: white !important;\n    padding: 10px !important;\n}\n\n#sidebar ul li a {\n    font-family: 'Questrial', sans-serif !important;\n}\n\nbody {\n    font-family: 'Source Sans Pro', sans-serif;\n    background: #fafafa;\n}\n\np {\n    font-family: 'Source Sans Pro', sans-serif;\n    font-size: 1.1em;\n    font-weight: 300;\n    line-height: 1.7em;\n    color: #999;\n}\n\n.mapboxgl-popup {\n    max-width: 400px;\n    font-family: 'Source Sans Pro', sans-serif;\n}\n\n#sidebar .active {\n    background-color: #30AABB !important;\n    border-color: #30AABB !important;\n}\n\n#map .mapboxgl-ctrl-bottom-right {\n    display: none !important;\n}"
 
 /***/ }),
 
@@ -114,14 +114,14 @@ var AppModule = /** @class */ (function () {
 /***/ "./src/app/list/list.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ".sidebar-header {\n    padding: 5%;\n    text-align: center;\n}\n\n.sidebar-header h3 {\n    font-family: 'Source Sans Pro', sans-serif;\n    color: white;\n}\n\n#menu {\n    text-align: center;\n    margin-bottom: 5px;\n    display: -webkit-inline-box;\n    cursor: pointer;\n}\n\n#menu[_ngcontent-c1] > li {\n    cursor: pointer !important;\n}\n\n#menu > .list-group-item {\n    color: black !important;\n    border: none !important;\n    margin-bottom: none !important;\n}\n\n#menu[_ngcontent-c1] .list-group-item:first-child {\n    border-top-left-radius: 0px !important;\n    border-top-right-radius: 0px !important;\n}\n\n#sidebar[_ngcontent-c0] #menu .pp-tab {\n    background-color: white !important;\n    padding: 10px;\n}\n\n"
+module.exports = ".sidebar-header {\n    padding: 5%;\n    text-align: center;\n}\n\n.sidebar-header h3 {\n    font-family: 'Source Sans Pro', sans-serif;\n    color: white;\n}\n\n#menu {\n    text-align: center;\n    display: -webkit-inline-box;\n    cursor: pointer;\n    margin-top: 18px !important;\n}\n\n#menu[_ngcontent-c1] > li {\n    cursor: pointer !important;\n}\n\n#menu > .list-group-item {\n    color: black !important;\n    border: none !important;\n    margin-bottom: none !important;\n}\n\n#menu[_ngcontent-c1] .list-group-item:first-child {\n    border-top-left-radius: 0px !important;\n    border-top-right-radius: 0px !important;\n}\n\n.pp-leit {\n    color: rgb(1, 102, 94);\n    border-color: rgb(1, 102, 94)\n}\n\nnav {\n    font-family: 'Source Sans Pro', sans-serif;\n    padding: 10px 50px;\n}\n\n#navbarSupportedContent ul {\n    margin: 0 auto;\n}\n\n"
 
 /***/ }),
 
 /***/ "./src/app/list/list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n          <!-- Sidebar Links -->\n              \n              <div role=\"tablist\" id=\"menu\">\n                  \n              </div>\n              <!--<a class=\"list-group-item active\" id=\"selectall\">Velja allt</a>-->\n\n              \n  \n              \n              \n  \n\n\n"
+module.exports = "\n          <!-- Sidebar Links -->\n          <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n                <a class=\"navbar-brand\" href=\"#\">\n                        <img src=\"../assets/img/Matis_logo_blatt-01.png\" width=\"30\" height=\"30\" class=\"d-inline-block align-top\" alt=\"\">\n                </a>\n\n                <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                  <span class=\"navbar-toggler-icon\"></span>\n                </button>\n              \n                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                  <ul class=\"navbar-nav mr-auto\">\n                    <li class=\"nav-item active\">\n                            \n                    </li>\n                    <li class=\"nav-item dropdown\">\n                      <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                        Landsvæði\n                      </a>\n                      <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n                        <a class=\"dropdown-item\" href=\"#\">Action</a>\n                        <a class=\"dropdown-item\" href=\"#\">Another action</a>\n                        <div class=\"dropdown-divider\"></div>\n                        <a class=\"dropdown-item\" href=\"#\">Something else here</a>\n                      </div>\n                    </li>\n                    <li class=\"nav-item dropdown\">\n                            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                              Markaðir\n                            </a>\n                            <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n                              <a class=\"dropdown-item\" href=\"#\">Action</a>\n                              <a class=\"dropdown-item\" href=\"#\">Another action</a>\n                              <div class=\"dropdown-divider\"></div>\n                              <a class=\"dropdown-item\" href=\"#\">Something else here</a>\n                            </div>\n                          </li>\n                          <form class=\"form-inline my-2 my-lg-0\">\n                                <input id='feature-filter' class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Sláðu inn leitarorð\" aria-label=\"Search\">\n                                <button class=\"btn btn-outline-success my-2 my-sm-0 pp-leit\" type=\"submit\">Leita</button>\n                                \n                              </form>\n                              \n                  </ul>\n                  \n                  \n                </div>\n              </nav>\n              \n              <div role=\"tablist\" id=\"menu\">\n                  \n              </div>\n              <!--<a class=\"list-group-item active\" id=\"selectall\">Velja allt</a>-->\n\n              \n  \n              \n              \n  \n\n\n"
 
 /***/ }),
 
@@ -179,14 +179,14 @@ var ListComponent = /** @class */ (function () {
 /***/ "./src/app/map/map.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "\n#map { position:absolute; top:0; bottom:0; width:100%; }\n\n#station_card {\n    position: absolute;\n    z-index: 100;\n    background-color: white;\n    opacity: 0.9;\n    bottom: 0px;\n    padding: 3%;\n    color: #818182;\n    -webkit-transition: .2;\n    transition: .2;\n    width: 100%;\n    text-align: center;\n}\n\n#station_card h3 {\n    color: black;\n    font-family: montserrat;\n}\n\n#station_card h2 {\nfont-size: 2rem;\ncolor: #17a2b8;\ntext-transform: uppercase;\nletter-spacing: 3px;\nfont-family: montserrat;\npadding-bottom: 5px;\n}\n\n#location {\n    font-weight: bold;\n}\n\n#tagline {\n    text-align: center;\n    font-family: sans-serif;\n    color: rgb(180, 180, 180);\n    font-weight: 100;\n    letter-spacing: .6px;\n    padding: 5px;\n}\n\n.iconwrap {\n    text-align: center;\n}\n\n.iconwrap img {\n    height: 70px;\n}\n\n#foodinc {\n    height: 50px;\n    margin-bottom: 15px;\n}\n\n#primary-producer {\n    display: -webkit-inline-box;\n    list-style: none;\n    padding-left: 0px;\n}\n\n#primary-producer li {\n    margin-right: 15px;\n}"
+module.exports = "\n#map { position:absolute; top:0; bottom:0; width:100%; }\n\n#dashboard {\n    position: absolute;\n    bottom: -515px;\n    -webkit-transition: .3s;\n    transition: .3s;\n}\n\nh5 {\n    font-family:\"source sans pro\";\n}\n\n#station_card {\n    z-index: 100;\n    background-color: white;\n    opacity: 0.9;\n    bottom: 0px;\n    padding: 3%;\n    color: #818182;\n    -webkit-transition: .2;\n    transition: .2;\n    width: 100%;\n    text-align: center;\n    border: 1px solid #d6d6d6;\n    border-radius: 5px;\n}\n\n#station_card h3 {\n    color: black;\n    font-family: montserrat;\n}\n\n#station_card h2 {\nfont-size: 2rem;\ncolor: #17a2b8;\ntext-transform: uppercase;\nletter-spacing: 3px;\nfont-family: montserrat;\npadding-bottom: 5px;\n}\n\n#location {\n    font-weight: bold;\n}\n\n#tagline {\n    text-align: center;\n    font-family: sans-serif;\n    color: rgb(180, 180, 180);\n    font-weight: 100;\n    letter-spacing: .6px;\n    padding: 5px;\n}\n\n.iconwrap {\n    text-align: center;\n}\n\n.iconwrap img {\n    height: 70px;\n}\n\n#foodinc {\n    height: 50px;\n    margin-bottom: 15px;\n}\n\n#primary-producer {\n    display: -webkit-inline-box;\n    list-style: none;\n    padding-left: 0px;\n}\n\n#primary-producer li {\n    margin-right: 15px;\n}\n\n#matis_logo {\n    height: 100px;\n    padding: 2%;\n}"
 
 /***/ }),
 
 /***/ "./src/app/map/map.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"map\">\n    <div id=\"station_card\">\n        <div id=\"station_info row\">\n            <!--<h2>Matarlandslagið</h2>-->\n            <div class=\"row\">\n                <div class=\"col-sm-12\">\n                <img id=\"foodinc\" src=\"\"/>\n                <h3 id=\"info\"></h3>\n                <h5 id=\"location\"></h5>\n                <h5 id=\"foodtype\"></h5>\n                <h5 id=\"foodtypeII\"></h5>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n"
+module.exports = "<div id=\"map\">\n    <div id=\"dashboard\" class=\"col-sm-12\">\n        <div id=\"station_info\" class=\"row\">\n            <!--<h2>Matarlandslagið</h2>-->\n                <div class=\"col-sm-4\">\n                    \n                </div>\n                <div id=\"station_card\" class=\"col-sm-4\">\n                <img id=\"foodinc\" src=\"\"/>\n                <h3 id=\"info\"></h3>\n                <h5 id=\"location\"></h5>\n                <h5 id=\"foodtype\"></h5>\n                <h5 id=\"foodtypeII\"></h5>\n                </div>\n                <div class=\"col-sm-4\">\n                    \n                </div>\n            \n        </div>\n    </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -284,6 +284,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+var listinn = [];
 var apiToken = __WEBPACK_IMPORTED_MODULE_1__environments_environment__["a" /* environment */].MAPBOX_API_KEY;
 var MapService = /** @class */ (function () {
     function MapService() {
@@ -309,6 +310,8 @@ var MapService = /** @class */ (function () {
                 },
                 trackUserLocation: true
             }));
+            var nav = new mapboxgl.NavigationControl();
+            map.addControl(nav, 'bottom-right');
             map.addSource('naut', {
                 type: 'vector',
                 url: 'mapbox://dagsson.cj98f0o860q2w33t4cyvvfhib-5qqz2'
@@ -335,6 +338,7 @@ var MapService = /** @class */ (function () {
                 document.getElementById('foodtype').innerHTML = e.features[0].properties.Product;
                 document.getElementById('foodtypeII').innerHTML = e.features[0].properties.ProductII;
                 document.getElementById('location').innerHTML = e.features[0].properties.Area;
+                document.getElementById('dashboard').setAttribute('style', 'bottom:30px');
                 document.getElementById('foodinc').setAttribute('src', '../assets/img/011-animals.png');
             });
             // Change the cursor to a pointer when the mouse is over the states layer.
@@ -385,6 +389,7 @@ var MapService = /** @class */ (function () {
                 document.getElementById('foodtype').innerHTML = e.features[0].properties.Product;
                 document.getElementById('foodtypeII').innerHTML = e.features[0].properties.ProductII;
                 document.getElementById('location').innerHTML = e.features[0].properties.Place;
+                document.getElementById('dashboard').setAttribute('style', 'bottom:30px');
                 document.getElementById('foodinc').setAttribute('src', '../assets/img/007-animals-5.png');
             });
             // Change the cursor to a pointer when the mouse is over the states layer.
@@ -440,6 +445,7 @@ var MapService = /** @class */ (function () {
                 document.getElementById('foodtype').innerHTML = e.features[0].properties.Product;
                 document.getElementById('foodtypeII').innerHTML = e.features[0].properties.Info;
                 document.getElementById('location').innerHTML = e.features[0].properties.Area;
+                document.getElementById('dashboard').setAttribute('style', 'bottom:30px');
                 document.getElementById('foodinc').setAttribute('src', '../assets/img/003-sea.png');
             });
             // Change the cursor to a pointer when the mouse is over the states layer.
@@ -477,6 +483,7 @@ var MapService = /** @class */ (function () {
                 document.getElementById('foodtype').innerHTML = e.features[0].properties.Product;
                 document.getElementById('foodtypeII').innerHTML = e.features[0].properties.Info;
                 document.getElementById('location').innerHTML = e.features[0].properties.Area;
+                document.getElementById('dashboard').setAttribute('style', 'bottom:30px');
                 document.getElementById('foodinc').setAttribute('src', '../assets/img/009-animals-3.png');
             });
             // Change the cursor to a pointer when the mouse is over the states layer.
@@ -518,6 +525,7 @@ var MapService = /** @class */ (function () {
                 document.getElementById('foodtype').innerHTML = e.features[0].properties.Product;
                 document.getElementById('foodtypeII').innerHTML = e.features[0].properties.Info;
                 document.getElementById('location').innerHTML = e.features[0].properties.Area;
+                document.getElementById('dashboard').setAttribute('style', 'bottom:30px');
                 document.getElementById('foodinc').setAttribute('src', '../assets/img/006-food-1.png');
             });
             // Change the cursor to a pointer when the mouse is over the states layer.
@@ -559,6 +567,7 @@ var MapService = /** @class */ (function () {
                 document.getElementById('foodtype').innerHTML = e.features[0].properties.Product;
                 document.getElementById('foodtypeII').innerHTML = e.features[0].properties.Info;
                 document.getElementById('location').innerHTML = e.features[0].properties.Area;
+                document.getElementById('dashboard').setAttribute('style', 'bottom:30px');
                 document.getElementById('foodinc').setAttribute('src', '../assets/img/008-animals-4.png');
             });
             // Change the cursor to a pointer when the mouse is over the states layer.
@@ -600,6 +609,7 @@ var MapService = /** @class */ (function () {
                 document.getElementById('foodtype').innerHTML = e.features[0].properties.Product;
                 document.getElementById('foodtypeII').innerHTML = e.features[0].properties.Info;
                 document.getElementById('location').innerHTML = e.features[0].properties.Area;
+                document.getElementById('dashboard').setAttribute('style', 'bottom:30px');
                 document.getElementById('foodinc').setAttribute('src', '../assets/img/001-transport.png');
             });
             // Change the cursor to a pointer when the mouse is over the states layer.
@@ -641,6 +651,7 @@ var MapService = /** @class */ (function () {
                 document.getElementById('foodtype').innerHTML = e.features[0].properties.Product;
                 document.getElementById('foodtypeII').innerHTML = e.features[0].properties.Info;
                 document.getElementById('location').innerHTML = e.features[0].properties.Area;
+                document.getElementById('dashboard').setAttribute('style', 'bottom:30px');
                 document.getElementById('foodinc').setAttribute('src', '../assets/img/002-animals-1.png');
             });
             // Change the cursor to a pointer when the mouse is over the states layer.
@@ -682,6 +693,7 @@ var MapService = /** @class */ (function () {
                 document.getElementById('foodtype').innerHTML = e.features[0].properties.Product;
                 document.getElementById('foodtypeII').innerHTML = e.features[0].properties.Info;
                 document.getElementById('location').innerHTML = e.features[0].properties.Area;
+                document.getElementById('dashboard').setAttribute('style', 'bottom:30px');
                 document.getElementById('foodinc').setAttribute('src', '../assets/img/004-nature.png');
             });
             // Change the cursor to a pointer when the mouse is over the states layer.
@@ -723,7 +735,8 @@ var MapService = /** @class */ (function () {
                 document.getElementById('foodtype').innerHTML = e.features[0].properties.Product;
                 document.getElementById('foodtypeII').innerHTML = e.features[0].properties.Info;
                 document.getElementById('location').innerHTML = e.features[0].properties.Area;
-                document.getElementById('foodinc').setAttribute('src', '../assets/img/010-animals-3.png');
+                document.getElementById('dashboard').setAttribute('style', 'bottom:30px');
+                document.getElementById('foodinc').setAttribute('src', '../assets/img/010-animals-2.png');
             });
             // Change the cursor to a pointer when the mouse is over the states layer.
             map.on('mouseenter', 'Svín', function (e) {
@@ -774,6 +787,7 @@ var MapService = /** @class */ (function () {
                 document.getElementById('foodtype').innerHTML = e.features[0].properties.Product;
                 document.getElementById('foodtypeII').innerHTML = e.features[0].properties.Info;
                 document.getElementById('location').innerHTML = e.features[0].properties.Area;
+                document.getElementById('dashboard').setAttribute('style', 'bottom:30px');
                 document.getElementById('foodinc').setAttribute('src', '../assets/img/005-food.png');
             });
             // Change the cursor to a pointer when the mouse is over the states layer.
@@ -804,19 +818,20 @@ var MapService = /** @class */ (function () {
             var id = toggleableLayerIds[i];
             var foodicon = document.createElement('img');
             var link = document.createElement('a');
+            var listar = [];
             link.textContent = id;
             link.appendChild(foodicon);
             link.style.color = "black";
             link.style.backgroundColor = "white";
             link.style.padding = "20px";
             link.style.fontFamily = "Source Sans Pro";
-            link.className = 'pp-tab';
             link.onclick = function (e) {
                 var clickedLayer = this.textContent;
                 e.preventDefault();
                 e.stopPropagation();
                 var bgColor = map.getPaintProperty(clickedLayer, 'circle-color');
                 var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+                console.log(clickedLayer);
                 if (visibility === 'none') {
                     this.className = 'pp-tab';
                     map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
