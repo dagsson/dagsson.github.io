@@ -127,7 +127,7 @@ module.exports = ".sidebar-header {\n    padding: 5%;\n    text-align: center;\n
 /***/ "./src/app/list/list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n          <!-- Sidebar Links -->\n          <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n                <a class=\"navbar-brand\" href=\"#\">\n                        <img src=\"../assets/img/Matis_logo_blatt-01.png\" width=\"30\" height=\"30\" class=\"d-inline-block align-top\" alt=\"\">\n                </a>\n\n                <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                  <span class=\"navbar-toggler-icon\"></span>\n                </button>\n              \n                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                  <ul class=\"navbar-nav mr-auto\">\n                    <li class=\"nav-item active\">\n                            \n                    </li>\n                    <li class=\"nav-item dropdown\">\n                      <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                        Landsvæði\n                      </a>\n                      <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n                        <a class=\"dropdown-item\" href=\"#\">Action</a>\n                        <a class=\"dropdown-item\" href=\"#\">Another action</a>\n                        <div class=\"dropdown-divider\"></div>\n                        <a class=\"dropdown-item\" href=\"#\">Something else here</a>\n                      </div>\n                    </li>\n                    <li class=\"nav-item dropdown\">\n                            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                              Markaðir\n                            </a>\n                            <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n                              <a class=\"dropdown-item\" href=\"#\">Action</a>\n                              <a class=\"dropdown-item\" href=\"#\">Another action</a>\n                              <div class=\"dropdown-divider\"></div>\n                              <a class=\"dropdown-item\" href=\"#\">Something else here</a>\n                            </div>\n                          </li>\n                          <form class=\"form-inline my-2 my-lg-0\">\n                                <input id='feature-filter' (keyup)=\"onKey($event)\" class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Sláðu inn leitarorð\" aria-label=\"Search\">\n                                <button class=\"btn btn-outline-success my-2 my-sm-0 pp-leit\" type=\"submit\">Leita</button>                               \n                          </form>\n                                                     \n                  </ul>\n                  \n                  \n                </div>\n              </nav>\n              \n              \n                  \n              <!--<a class=\"list-group-item active\" id=\"selectall\">Velja allt</a>-->\n\n              \n  \n              \n              \n  \n\n\n"
+module.exports = "\n          <!-- Sidebar Links -->\n          <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n                <a class=\"navbar-brand\" href=\"#\">\n                        <img src=\"../assets/img/Matis_logo_blatt-01.png\" width=\"30\" height=\"30\" class=\"d-inline-block align-top\" alt=\"\">\n                </a>\n\n                <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                  <span class=\"navbar-toggler-icon\"></span>\n                </button>\n              \n                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                  <ul class=\"navbar-nav mr-auto\">\n                    <li class=\"nav-item active\">\n                            \n                    </li>\n                    <li class=\"nav-item dropdown\">\n                      <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdownMenuLink\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                        Landssvæði\n                      </a>\n                      <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">\n                        <a class=\"dropdown-item\" href=\"#\">Action</a>\n                        <a class=\"dropdown-item\" href=\"#\">Another action</a>\n                        <a class=\"dropdown-item\" href=\"#\">Something else here</a>\n                      </div>\n                    </li>\n                    <li class=\"nav-item dropdown\">\n                            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                              Markaðir\n                            </a>\n                            <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n                              <a class=\"dropdown-item\" href=\"#\">Action</a>\n                              <a class=\"dropdown-item\" href=\"#\">Another action</a>\n                              <div class=\"dropdown-divider\"></div>\n                              <a class=\"dropdown-item\" href=\"#\">Something else here</a>\n                            </div>\n                          </li>\n                          <form class=\"form-inline my-2 my-lg-0\">\n                                <input id='feature-filter' (keyup)=\"onKey($event)\" class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Sláðu inn leitarorð\" aria-label=\"Search\">\n                                <button class=\"btn btn-outline-success my-2 my-sm-0 pp-leit\" type=\"submit\">Leita</button>                               \n                          </form>\n                                                     \n                  </ul>\n                  \n                  \n                </div>\n              </nav>\n              \n              \n                  \n              <!--<a class=\"list-group-item active\" id=\"selectall\">Velja allt</a>-->\n\n              \n  \n              \n              \n  \n\n\n"
 
 /***/ }),
 
@@ -305,6 +305,12 @@ var MapService = /** @class */ (function () {
             minZoom: 5.6,
             center: [-19.058391, 64.970529]
         });
+        function flyToStore(currentFeature) {
+            map.flyTo({
+                center: currentFeature.geometry.coordinates,
+                zoom: 12
+            });
+        }
         /*
            function renderListings(features) {
             // Clear any existing listings
@@ -410,6 +416,8 @@ var MapService = /** @class */ (function () {
                 document.getElementById('dashboard').setAttribute('style', 'bottom:115px');
                 document.getElementById('foodinc').setAttribute('src', '../assets/img/011-animals-w.png');
                 document.getElementById('card-heading').setAttribute('style', 'background-color: rgb(84,48,5)');
+                var clickedPoint = e.features[0];
+                flyToStore(clickedPoint);
             });
             // Change the cursor to a pointer when the mouse is over the states layer.
             map.on('mouseenter', 'Nautgripir', function (e) {
@@ -462,6 +470,8 @@ var MapService = /** @class */ (function () {
                 document.getElementById('dashboard').setAttribute('style', 'bottom:115px');
                 document.getElementById('foodinc').setAttribute('src', '../assets/img/007-animals-5-w.png');
                 document.getElementById('card-heading').setAttribute('style', 'background-color: #8c510a');
+                var clickedPoint = e.features[0];
+                flyToStore(clickedPoint);
             });
             // Change the cursor to a pointer when the mouse is over the states layer.
             map.on('mouseenter', 'Sauðfé', function (e) {
@@ -515,6 +525,8 @@ var MapService = /** @class */ (function () {
                 document.getElementById('dashboard').setAttribute('style', 'bottom:115px');
                 document.getElementById('foodinc').setAttribute('src', '../assets/img/003-sea-w.png');
                 document.getElementById('card-heading').setAttribute('style', 'background-color: #bf812d');
+                var clickedPoint = e.features[0];
+                flyToStore(clickedPoint);
             });
             // Change the cursor to a pointer when the mouse is over the states layer.
             map.on('mouseenter', 'Þörungar', function (e) {
@@ -555,7 +567,7 @@ var MapService = /** @class */ (function () {
                         'base': 2,
                         'stops': [[8, 3], [16, 180]]
                     },
-                    'circle-color': '#dfc27d'
+                    'circle-color': '#A57D28'
                 },
                 'source-layer': 'Hross_merged'
             });
@@ -566,7 +578,9 @@ var MapService = /** @class */ (function () {
                 document.getElementById('location').innerHTML = e.features[0].properties.Area;
                 document.getElementById('dashboard').setAttribute('style', 'bottom:115px');
                 document.getElementById('foodinc').setAttribute('src', '../assets/img/009-animals-3-w.png');
-                document.getElementById('card-heading').setAttribute('style', 'background-color: #dfc27d');
+                document.getElementById('card-heading').setAttribute('style', 'background-color: #A57D28');
+                var clickedPoint = e.features[0];
+                flyToStore(clickedPoint);
             });
             // Change the cursor to a pointer when the mouse is over the states layer.
             map.on('mouseenter', 'Hestar', function (e) {
@@ -607,7 +621,7 @@ var MapService = /** @class */ (function () {
                         'base': 2,
                         'stops': [[8, 3], [16, 180]]
                     },
-                    'circle-color': '#f6e8c3'
+                    'circle-color': '#dea613'
                 },
                 'source-layer': 'Fiskeldi_merged'
             });
@@ -618,7 +632,9 @@ var MapService = /** @class */ (function () {
                 document.getElementById('location').innerHTML = e.features[0].properties.Area;
                 document.getElementById('dashboard').setAttribute('style', 'bottom:115px');
                 document.getElementById('foodinc').setAttribute('src', '../assets/img/006-food-1-w.png');
-                document.getElementById('card-heading').setAttribute('style', 'background-color: #f6e8c3');
+                document.getElementById('card-heading').setAttribute('style', 'background-color: #dea613');
+                var clickedPoint = e.features[0];
+                flyToStore(clickedPoint);
             });
             // Change the cursor to a pointer when the mouse is over the states layer.
             map.on('mouseenter', 'Fiskeldi', function (e) {
@@ -671,6 +687,8 @@ var MapService = /** @class */ (function () {
                 document.getElementById('dashboard').setAttribute('style', 'bottom:115px');
                 document.getElementById('foodinc').setAttribute('src', '../assets/img/008-animals-4-w.png');
                 document.getElementById('card-heading').setAttribute('style', 'background-color: #b1200f');
+                var clickedPoint = e.features[0];
+                flyToStore(clickedPoint);
             });
             // Change the cursor to a pointer when the mouse is over the states layer.
             map.on('mouseenter', 'Alifuglar', function (e) {
@@ -717,12 +735,14 @@ var MapService = /** @class */ (function () {
             });
             map.on('click', 'Skip', function (e) {
                 document.getElementById('info').innerHTML = e.features[0].properties.Name;
-                document.getElementById('foodtype').innerHTML = e.features[0].properties.Product;
-                document.getElementById('foodtypeII').innerHTML = e.features[0].properties.Info;
-                document.getElementById('location').innerHTML = e.features[0].properties.Area;
+                document.getElementById('foodtype').innerHTML = e.features[0].properties.Type;
+                document.getElementById('foodtypeII').innerHTML = e.features[0].properties.Size;
+                document.getElementById('location').innerHTML = e.features[0].properties.Place;
                 document.getElementById('dashboard').setAttribute('style', 'bottom:115px');
                 document.getElementById('foodinc').setAttribute('src', '../assets/img/001-transport-w.png');
                 document.getElementById('card-heading').setAttribute('style', 'background-color: #fa482e');
+                var clickedPoint = e.features[0];
+                flyToStore(clickedPoint);
             });
             // Change the cursor to a pointer when the mouse is over the states layer.
             map.on('mouseenter', 'Skip', function (e) {
@@ -775,6 +795,8 @@ var MapService = /** @class */ (function () {
                 document.getElementById('dashboard').setAttribute('style', 'bottom:115px');
                 document.getElementById('foodinc').setAttribute('src', '../assets/img/002-animals-1-w.png');
                 document.getElementById('card-heading').setAttribute('style', 'background-color: #f4a32e');
+                var clickedPoint = e.features[0];
+                flyToStore(clickedPoint);
             });
             // Change the cursor to a pointer when the mouse is over the states layer.
             map.on('mouseenter', 'Geitur', function (e) {
@@ -827,6 +849,8 @@ var MapService = /** @class */ (function () {
                 document.getElementById('dashboard').setAttribute('style', 'bottom:115px');
                 document.getElementById('foodinc').setAttribute('src', '../assets/img/004-nature-w.png');
                 document.getElementById('card-heading').setAttribute('style', 'background-color: #80cdc1');
+                var clickedPoint = e.features[0];
+                flyToStore(clickedPoint);
             });
             // Change the cursor to a pointer when the mouse is over the states layer.
             map.on('mouseenter', 'Matjurtir', function (e) {
@@ -845,7 +869,7 @@ var MapService = /** @class */ (function () {
                     .addTo(map);
             });
             // Change it back to a pointer when it leaves.
-            map.on('mouseleave', 'Matujurtir', function () {
+            map.on('mouseleave', 'Matjurtir', function () {
                 map.getCanvas().style.cursor = '';
                 popup.remove();
             });
@@ -879,6 +903,8 @@ var MapService = /** @class */ (function () {
                 document.getElementById('dashboard').setAttribute('style', 'bottom:115px');
                 document.getElementById('foodinc').setAttribute('src', '../assets/img/010-animals-2-w.png');
                 document.getElementById('card-heading').setAttribute('style', 'background-color: #35978f');
+                var clickedPoint = e.features[0];
+                flyToStore(clickedPoint);
             });
             // Change the cursor to a pointer when the mouse is over the states layer.
             map.on('mouseenter', 'Svín', function (e) {
@@ -931,6 +957,8 @@ var MapService = /** @class */ (function () {
                 document.getElementById('dashboard').setAttribute('style', 'bottom: 115px');
                 document.getElementById('foodinc').setAttribute('src', '../assets/img/005-food-w.png');
                 document.getElementById('card-heading').setAttribute('style', 'background-color: #01665e');
+                var clickedPoint = e.features[0];
+                flyToStore(clickedPoint);
             });
             // Change the cursor to a pointer when the mouse is over the states layer.
             map.on('mouseenter', 'Skelfiskur', function (e) {
@@ -972,8 +1000,9 @@ var MapService = /** @class */ (function () {
             foodicon.style.height = "25px";
             foodicon.style.margin = "10px auto 0px";
             foodicon.style.opacity = "0.3";
+            var features = map.getSource('skelfiskur');
             link.onclick = function (e) {
-                console.log();
+                console.log(map.getSource('hross'));
                 var clickedLayer = this.textContent;
                 e.preventDefault();
                 e.stopPropagation();
