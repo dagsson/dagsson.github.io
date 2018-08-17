@@ -69,18 +69,26 @@ var AppComponent = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/platform-browser.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__list_list_component__ = __webpack_require__("./src/app/list/list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__map_map_component__ = __webpack_require__("./src/app/map/map.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_food_service__ = __webpack_require__("./src/app/services/food.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_map_service__ = __webpack_require__("./src/app/services/map.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ngx_mapbox_gl__ = __webpack_require__("./node_modules/ngx-mapbox-gl/esm5/ngx-mapbox-gl.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2__ = __webpack_require__("./node_modules/angularfire2/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__("./node_modules/angularfire2/database/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__list_list_component__ = __webpack_require__("./src/app/list/list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__map_map_component__ = __webpack_require__("./src/app/map/map.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_food_service__ = __webpack_require__("./src/app/services/food.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_map_service__ = __webpack_require__("./src/app/services/map.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ngx_mapbox_gl__ = __webpack_require__("./node_modules/ngx-mapbox-gl/esm5/ngx-mapbox-gl.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
 
 
 
@@ -95,19 +103,22 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["F" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_3__list_list_component__["a" /* ListComponent */],
-                __WEBPACK_IMPORTED_MODULE_4__map_map_component__["a" /* MapComponent */]
+                __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_5__list_list_component__["a" /* ListComponent */],
+                __WEBPACK_IMPORTED_MODULE_6__map_map_component__["a" /* MapComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_7_ngx_mapbox_gl__["a" /* NgxMapboxGLModule */].forRoot({
+                __WEBPACK_IMPORTED_MODULE_2_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_10__environments_environment__["a" /* environment */].firebase),
+                __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabaseModule */],
+                __WEBPACK_IMPORTED_MODULE_11__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_9_ngx_mapbox_gl__["a" /* NgxMapboxGLModule */].forRoot({
                     accessToken: 'pk.eyJ1IjoiZGFnc3NvbiIsImEiOiJjajk0MTRqdWIzZGxwMzNycGtreDhxMmRxIn0.0zk_7FSvF_LlQ0AD2cChWQ',
                     geocoderAccessToken: 'TOKEN' // Optionnal, specify if different from the map access token, can also be set per mgl-geocoder (accessToken input of mgl-geocoder)
                 })
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_5__services_food_service__["a" /* FoodService */], __WEBPACK_IMPORTED_MODULE_6__services_map_service__["a" /* MapService */]],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_7__services_food_service__["a" /* FoodService */], __WEBPACK_IMPORTED_MODULE_8__services_map_service__["a" /* MapService */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -120,14 +131,14 @@ var AppModule = /** @class */ (function () {
 /***/ "./src/app/list/list.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ".sidebar-header {\n    padding: 5%;\n    text-align: center;\n}\n\n.sidebar-header h3 {\n    font-family: 'Source Sans Pro', sans-serif;\n    color: white;\n}\n\n.pp-leit {\n    color: rgb(1, 102, 94);\n    border-color: rgb(1, 102, 94)\n}\n\nnav {\n    font-family: 'Source Sans Pro', sans-serif;\n    padding: 10px 50px;\n}\n\n#navbarSupportedContent ul {\n    margin: 0 auto;\n}\n\n"
+module.exports = ".sidebar-header {\n    padding: 5%;\n    text-align: center;\n}\n\n.sidebar-header h3 {\n    font-family: 'Source Sans Pro', sans-serif;\n    color: white;\n}\n\n.pp-leit {\n    color: rgb(1, 102, 94);\n    border-color: rgb(1, 102, 94)\n}\n\nnav {\n    font-family: 'Source Sans Pro', sans-serif;\n    padding: 10px 50px;\n}\n\n#navbarSupportedContent ul {\n    margin: 0 auto;\n}\n\n.list-dropdown {\n  position: absolute;\n  z-index: 100;\n  width: 100%;\n  background: white;\n  color: black;\n  text-align: left;\n  overflow-y: auto;\n  max-height: 400px;\n}\n\n.producers {\n  padding: 10px;\n}\n\n.producers:hover {\n  background:#c2c2c2\n}\n\n.autocomplete {\n  /*the container must be positioned relative:*/\n  position: relative;\n  display: inline-block;\n}\n\ninput {\n  border: 1px solid transparent;\n  background-color: #f1f1f1;\n  padding: 10px;\n  font-size: 16px;\n}\n\ninput[type=text] {\n  background-color: #f1f1f1;\n  width: 100%;\n}\n\ninput[type=button] {\n  background-color: DodgerBlue;\n  color: #fff;\n  cursor: pointer;\n}\n\n.autocomplete-items {\n  position: absolute;\n  border: 1px solid #d4d4d4;\n  border-bottom: none;\n  border-top: none;\n  z-index: 99;\n  /*position the autocomplete items to be the same width as the container:*/\n  top: 100%;\n  left: 0;\n  right: 0;\n}\n\n.autocomplete-items div {\n  padding: 10px;\n  cursor: pointer;\n  background-color: #fff; \n  border-bottom: 1px solid #d4d4d4; \n}\n\n.autocomplete-items div:hover {\n  /*when hovering an item:*/\n  background-color: #e9e9e9; \n}\n\n.autocomplete-active {\n  /*when navigating through the items using the arrow keys:*/\n  background-color: DodgerBlue !important; \n  color: #ffffff; \n}\n  "
 
 /***/ }),
 
 /***/ "./src/app/list/list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n          <!-- Sidebar Links -->\n          <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n                <a class=\"navbar-brand\" href=\"#\">\n                        <img src=\"../assets/img/Matis_logo_blatt-01.png\" width=\"30\" height=\"30\" class=\"d-inline-block align-top\" alt=\"\">\n                </a>\n\n                <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                  <span class=\"navbar-toggler-icon\"></span>\n                </button>\n              \n                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                  <ul class=\"navbar-nav mr-auto\">\n                    <li class=\"nav-item active\">\n                            \n                    </li>\n                    <li class=\"nav-item dropdown\">\n                      <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdownMenuLink\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                        Landssvæði\n                      </a>\n                      <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">\n                        <a class=\"dropdown-item\" href=\"#\">Action</a>\n                        <a class=\"dropdown-item\" href=\"#\">Another action</a>\n                        <a class=\"dropdown-item\" href=\"#\">Something else here</a>\n                      </div>\n                    </li>\n                    <li class=\"nav-item dropdown\">\n                            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                              Markaðir\n                            </a>\n                            <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n                              <a class=\"dropdown-item\" href=\"#\">Action</a>\n                              <a class=\"dropdown-item\" href=\"#\">Another action</a>\n                              <div class=\"dropdown-divider\"></div>\n                              <a class=\"dropdown-item\" href=\"#\">Something else here</a>\n                            </div>\n                          </li>\n                          <form class=\"form-inline my-2 my-lg-0\">\n                                <input id='feature-filter' (keyup)=\"onKey($event)\" class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Sláðu inn leitarorð\" aria-label=\"Search\">\n                                <button class=\"btn btn-outline-success my-2 my-sm-0 pp-leit\" type=\"submit\">Leita</button>                               \n                          </form>\n                                                     \n                  </ul>\n                  \n                  \n                </div>\n              </nav>\n              \n              \n                  \n              <!--<a class=\"list-group-item active\" id=\"selectall\">Velja allt</a>-->\n\n              \n  \n              \n              \n  \n\n\n"
+module.exports = "\n          <!-- Sidebar Links -->\n          <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n                <a class=\"navbar-brand\" href=\"#\">\n                        <img src=\"../assets/img/Matis_logo_blatt-01.png\" width=\"30\" height=\"30\" class=\"d-inline-block align-top\" alt=\"\">\n                </a>\n\n                <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                  <span class=\"navbar-toggler-icon\"></span>\n                </button>\n              \n                <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n                  <ul class=\"navbar-nav mr-auto\">\n                    <li class=\"nav-item active\">\n                            \n                    </li>\n            \n                    <!--<li class=\"nav-item dropdown\">\n                            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                              Markaðir\n                            </a>\n                            <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n                              <a class=\"dropdown-item\" href=\"#\">Bændamarkaður Hofósi</a>\n                              <a class=\"dropdown-item\" href=\"#\">Bændamarkaður Hvolsvelli</a>\n                            </div>\n                          </li>-->\n\n                          <form autocomplete=\"off\">\n                            <div class=\"autocomplete\" style=\"width:300px;\">\n                              <input id=\"theinput\" type=\"text\" (keyup)=\"onKey($event)\" placeholder=\"Frumframleiðandi\">\n                              <div *ngIf=\"showDropDown\" class=\"list-dropdown\">\n                                  <div>\n                                    <div (click)=\"selectValue(filter)\" class=\"producers\" *ngFor=\"let filter of filtered\">\n                                        {{filter}} \n                                    </div>    \n                                  </div> \n                                </div>\n                            </div>\n                            <input type=\"button\" value=\"Finna stað\" id=\"leit-btn\">\n                          </form>\n                                                     \n                  </ul>\n\n                  \n                </div>\n              </nav>\n\n              \n  \n              \n              \n  \n\n\n"
 
 /***/ }),
 
@@ -139,6 +150,7 @@ module.exports = "\n          <!-- Sidebar Links -->\n          <nav class=\"nav
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_mock_food__ = __webpack_require__("./src/app/shared/mock-food.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_map_service__ = __webpack_require__("./src/app/services/map.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -151,17 +163,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ListComponent = /** @class */ (function () {
-    function ListComponent(_mapService) {
+    function ListComponent(http, _mapService) {
+        this.http = http;
         this._mapService = _mapService;
-        this.values = '';
+        this.token = 'pk.eyJ1IjoiZGFnc3NvbiIsImEiOiJjajk0MTRqdWIzZGxwMzNycGtreDhxMmRxIn0.0zk_7FSvF_LlQ0AD2cChWQ';
+        this.urls = ['https://api.mapbox.com/datasets/v1/dagsson/cjgxs7hoc07ly2wmx7wc7qjz9/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjgxrynuy1nhn2wmoqz4sn8fu/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjgxsaekx0cdv33o8zncly704/features'];
+        this.filtered = [];
+        this.showDropDown = false;
         this.food = __WEBPACK_IMPORTED_MODULE_1__shared_mock_food__["a" /* FOOD_LIST */];
     }
-    ListComponent.prototype.onKey = function (event) {
-        this.values += event.target.value;
-        (console.log(this.values));
-    };
     ListComponent.prototype.ngOnInit = function () {
+    };
+    ListComponent.prototype.selectValue = function (p) {
+        var inputElement = document.getElementById('theinput');
+        inputElement.value = p;
+        this.showDropDown = false;
+    };
+    ListComponent.prototype.onKey = function (e) {
+        var _this = this;
+        this.showDropDown = true;
+        var value = e.target.value.trim().toLowerCase();
+        for (var i in this.urls) {
+            this.http.get(this.urls[i] + '?access_token=' + this.token).subscribe(function (val) {
+                _this.response = val['features'];
+                _this.posts = _this.response.map(function (response) { return response.properties.Name.trim().toLowerCase(); });
+            });
+        }
+        ;
+        this.filtered = this.posts.filter(function (post) { return post.indexOf(value) > -1 && value.length > 2; });
     };
     ListComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
@@ -169,7 +200,8 @@ var ListComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/list/list.component.html"),
             styles: [__webpack_require__("./src/app/list/list.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_map_service__["a" /* MapService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_2__services_map_service__["a" /* MapService */]])
     ], ListComponent);
     return ListComponent;
 }());
@@ -181,14 +213,14 @@ var ListComponent = /** @class */ (function () {
 /***/ "./src/app/map/map.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "\n#map { position:absolute; top:0; bottom:0; width:100%; }\n\n#dashboard {\n    position: absolute;\n    bottom: -550px;\n    -webkit-transition: .3s;\n    transition: .3s;\n}\n\nh5, h6 {\n    font-family: \"source sans pro\";\n}\n\nh3 {\n    font-size: 1.2rem;\n}\n\n#station_card {\n    z-index: 100;\n    background-color: white;\n    opacity: 0.9;\n    bottom: 0px;\n    color: #818182;\n    -webkit-transition: .2;\n    transition: .2;\n    width: 100%;\n    text-align: center;\n    border: 1px solid #d6d6d6;\n    padding: 0px;\n}\n\n#station_card div {\n    padding: 3% 7%;\n}\n\n#station_card h2 {\nfont-size: 2rem;\ncolor: #17a2b8;\ntext-transform: uppercase;\nletter-spacing: 3px;\nfont-family: montserrat;\npadding-bottom: 5px;\n}\n\n#info {\n    color: white;\n    padding: 12px;\n    padding-left: 12px;\n    font-family: montserrat;\n    font-size: 14px;\n}\n\n#tagline {\n    text-align: center;\n    font-family: sans-serif;\n    color: rgb(180, 180, 180);\n    font-weight: 100;\n    letter-spacing: .6px;\n    padding: 5px;\n}\n\n.iconwrap {\n    text-align: center;\n}\n\n.iconwrap img {\n    height: 70px;\n}\n\n#foodinc {\n    height: 35px;\n}\n\n#foodtype, #foodtypeII, #location {\n    font-size: 1rem;\n    color: black;\n}\n\n#primary-producer {\n    display: -webkit-inline-box;\n    list-style: none;\n    padding-left: 0px;\n}\n\n#primary-producer li {\n    margin-right: 15px;\n}\n\n#matis_logo {\n    height: 100px;\n    padding: 2%;\n}\n\n#menu {\n    text-align: center;\n    display: -webkit-inline-box;\n    cursor: pointer;\n    margin-top: 18px !important;\n    z-index: 100;\n}\n\n#menu[_ngcontent-c1] > li {\n    cursor: pointer !important;\n}\n\n#menu > .list-group-item {\n    color: black !important;\n    border: none !important;\n    margin-bottom: none !important;\n}\n\n#menu[_ngcontent-c1] .list-group-item:first-child {\n    border-top-left-radius: 0px !important;\n    border-top-right-radius: 0px !important;\n}\n\n#tabs {\n    position: absolute;\n    bottom: 0px !important;\n    z-index: 2;\n    text-align: center;\n    font-size: 14px;\n}\n\n.details {\n    text-align: left;\n}\n\n#close_button {\n    position: absolute;\n    top: 16px;\n    right: 16px;\n    height: 15px;\n}"
+module.exports = "\n#map { position:absolute; top:0; bottom:0; width:100%; }\n\n#dashboard {\n    position: absolute;\n    bottom: -550px;\n    -webkit-transition: .3s;\n    transition: .3s;\n}\n\nh5, h6 {\n    font-family: \"source sans pro\";\n}\n\nh3 {\n    font-size: 1.2rem;\n}\n\n#station_card {\n    z-index: 100;\n    background-color: white;\n    opacity: 0.9;\n    bottom: 0px;\n    color: #818182;\n    -webkit-transition: .2;\n    transition: .2;\n    width: 100%;\n    text-align: center;\n    border: 1px solid #d6d6d6;\n    padding: 0px;\n}\n\n#station_card div {\n    padding: 3% 7%;\n}\n\n#station_card h2 {\nfont-size: 2rem;\ncolor: #17a2b8;\ntext-transform: uppercase;\nletter-spacing: 3px;\nfont-family: montserrat;\npadding-bottom: 5px;\n}\n\n#info {\n    color: white;\n    padding: 12px;\n    padding-left: 12px;\n    font-family: montserrat;\n    font-size: 14px;\n}\n\n#tagline {\n    text-align: center;\n    font-family: sans-serif;\n    color: rgb(180, 180, 180);\n    font-weight: 100;\n    letter-spacing: .6px;\n    padding: 5px;\n}\n\n.iconwrap {\n    text-align: center;\n}\n\n.iconwrap img {\n    height: 70px;\n}\n\n#foodinc {\n    height: 35px;\n}\n\n#foodtype, #foodtypeII, #location {\n    font-size: 1rem;\n    color: black;\n}\n\n#primary-producer {\n    display: -webkit-inline-box;\n    list-style: none;\n    padding-left: 0px;\n}\n\n#primary-producer li {\n    margin-right: 15px;\n}\n\n#matis_logo {\n    height: 100px;\n    padding: 2%;\n}\n\n#menu {\n    text-align: center;\n    display: -webkit-inline-box;\n    cursor: pointer;\n    margin-top: 18px !important;\n    z-index: 100;\n}\n\n#menu[_ngcontent-c1] > li {\n    cursor: pointer !important;\n}\n\n#menu > .list-group-item {\n    color: black !important;\n    border: none !important;\n    margin-bottom: none !important;\n}\n\n#menu[_ngcontent-c1] .list-group-item:first-child {\n    border-top-left-radius: 0px !important;\n    border-top-right-radius: 0px !important;\n}\n\n#tabs {\n    position: absolute;\n    bottom: 0px !important;\n    z-index: 2;\n    text-align: center;\n    font-size: 14px;\n}\n\n.details {\n    text-align: left;\n}\n\n#close_button {\n    position: absolute;\n    top: 16px;\n    right: 16px;\n    height: 15px;\n}\n\n.map-overlay .listing {\n    overflow: auto;\n    max-height: 100%;\n    position: absolute;\n    list-style: none;\n    max-width: 200px;\n    background-color: #ffffff70;\n    margin-top: 35px;\n}\n\n#feature-listing li {\n    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;\n}\n\n.map-overlay .listing a:last-child {\n    border: none;\n}\n\n.map-overlay .listing a:hover {\n    background: #f0f0f0;\n}"
 
 /***/ }),
 
 /***/ "./src/app/map/map.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"map\">\n    <div id=\"tabs\" class=\"col-sm-12\">\n            <div role=\"tablist\" id=\"menu\"></div>\n    </div>\n    <div id=\"dashboard\" class=\"col-sm-12\">\n            \n        <div id=\"station_info\" class=\"row\">\n                \n                <div class=\"col-sm-4\"></div>\n                <div id=\"station_card\" class=\"col-sm-4\">\n                    <div id=\"card-heading\"><img id=\"foodinc\" src=''/><span id=\"info\"></span></div>\n                    <img src=\"../assets/img/close.png\" (click)=\"close($event)\" id=\"close_button\"/>\n                    <div class=\"row\">\n                    <div class=\"col-sm-6 details\">\n                        <h6>Staðsetning:</h6>\n                        <h5 id=\"location\"></h5>\n                    </div>\n                    <div class=\"col-sm-6 details\">\n                        <h6>Starfsemi:</h6>\n                        <h5 id=\"foodtype\"></h5>\n                        <h5 id=\"foodtypeII\"></h5>\n                    </div>\n                    </div>\n                </div>\n                <div class=\"col-sm-4\"></div>\n            \n        </div>\n        \n    </div>\n \n</div>\n\n"
+module.exports = "<div id=\"map\">\n    <div id=\"tabs\" class=\"col-sm-12\">\n            <div role=\"tablist\" id=\"menu\"></div>\n    </div>\n    <div id=\"dashboard\" class=\"col-sm-12\">\n            \n        <div id=\"station_info\" class=\"row\">\n                \n                <div class=\"col-sm-4\"></div>\n                <div id=\"station_card\" class=\"col-sm-4\">\n                    <div id=\"card-heading\"><img id=\"foodinc\" src=''/><span id=\"info\"></span></div>\n                    <img src=\"../assets/img/close.png\" (click)=\"close($event)\" id=\"close_button\"/>\n                    <div class=\"row\">\n                    <div class=\"col-sm-6 details\">\n                        <h6>Staðsetning:</h6>\n                        <h5 id=\"location\"></h5>\n                    </div>\n                    <div class=\"col-sm-6 details\">\n                        <h6>Starfsemi:</h6>\n                        <h5 id=\"foodtype\"></h5>\n                        <h5 id=\"foodtypeII\"></h5>\n                    </div>\n                    </div>\n                </div>\n                <div class=\"col-sm-4\"></div>\n            \n        </div>\n        \n    </div>\n \n</div>\n\n<div class='map-overlay'>\n        <ul id='feature-listing' class='listing'>\n        </ul>\n</div>\n\n"
 
 /***/ }),
 
@@ -215,7 +247,6 @@ var MapComponent = /** @class */ (function () {
         this._mapService = _mapService;
     }
     MapComponent.prototype.close = function (event) {
-        console.log("what!!!!");
         document.getElementById("dashboard").style.bottom = '-550px';
     };
     MapComponent.prototype.ngOnInit = function () {
@@ -279,6 +310,7 @@ var FoodService = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -290,12 +322,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var listinn = [];
 var apiToken = __WEBPACK_IMPORTED_MODULE_1__environments_environment__["a" /* environment */].MAPBOX_API_KEY;
 var MapService = /** @class */ (function () {
-    function MapService() {
+    function MapService(http) {
+        this.http = http;
     }
     MapService.prototype.getMap = function () {
+        var http = this.http;
         var mapboxgl = __webpack_require__("./node_modules/mapbox-gl/dist/mapbox-gl.js");
         mapboxgl.accessToken = apiToken;
         var map = new mapboxgl.Map({
@@ -306,78 +341,39 @@ var MapService = /** @class */ (function () {
             center: [-19.058391, 64.970529]
         });
         map.addControl(new mapboxgl.AttributionControl(), 'top-left');
+        var inputElement = document.getElementById('theinput');
+        var listingEl = document.getElementById('feature-listing');
+        var searchBtn = document.getElementById('leit-btn');
+        var popup = new mapboxgl.Popup({
+            closeButton: false,
+            closeOnClick: false
+        });
         function flyToStore(currentFeature) {
             map.flyTo({
                 center: currentFeature.geometry.coordinates,
                 zoom: 12
             });
         }
-        /*
-           function renderListings(features) {
-            // Clear any existing listings
-            listingEl.innerHTML = '';
-            if (features.length) {
-                features.forEach(function(feature) {
-                    var prop = feature.properties;
-                    var item = document.createElement('a');
-                    item.href = prop.wikipedia;
-                    item.target = '_blank';
-                    item.textContent = prop.Name;
-                    listingEl.appendChild(item);
+        searchBtn.addEventListener('click', function (r) {
+            var token = 'pk.eyJ1IjoiZGFnc3NvbiIsImEiOiJjajk0MTRqdWIzZGxwMzNycGtreDhxMmRxIn0.0zk_7FSvF_LlQ0AD2cChWQ';
+            var urls = ['https://api.mapbox.com/datasets/v1/dagsson/cjgxs7hoc07ly2wmx7wc7qjz9/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjgxrynuy1nhn2wmoqz4sn8fu/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjgxsaekx0cdv33o8zncly704/features'];
+            var goTo = inputElement.value;
+            var response;
+            for (var i in urls) {
+                http.get(urls[i] + '?access_token=' + token).subscribe(function (val) {
+                    response = val['features'];
+                    goToPoint(response, goTo);
                 });
-        
-                // Show the filter input
-                (<HTMLElement>filterEl.parentNode).style.display = 'block';
-        
-            } else {
-                var empty = document.createElement('p');
-                empty.textContent = 'Drag the map to populate results';
-                listingEl.appendChild(empty);
-        
-                // Hide the filter input
-        
-                (<HTMLElement>filterEl.parentNode).style.display = 'none';
-        
-                // remove features filter
-                map.setFilter('Nautgripir', ['has', 'Name']);
             }
-        }
-        
-           function normalize(string) {
-            return string.trim().toLowerCase();
-        }
-        
-        
-        
-           filterEl.addEventListener('test', function(e) {
-               console.log('what!!!!');
-            var element = e.currentTarget as HTMLInputElement;
-            var value = element.value;
-            value = normalize(value);
-        
-            // Filter visible features that don't match the input value.
-            var filtered = listinn.filter(function(feature) {
-                var name = normalize(feature.properties.name);
-                var code = normalize(feature.properties.abbrev);
-                return name.indexOf(value) > -1 || code.indexOf(value) > -1;
-            });
-        
-            // Populate the sidebar with filtered results
-            renderListings(filtered);
-        
-            // Set the filter to populate features into the layer.
-            map.setFilter('airport', ['match', ['get', 'abbrev'], filtered.map(function(feature) {
-                return feature.properties.abbrev;
-            }), true, false]);
+            ;
         });
-        
-        // Call this function on initialization
-        // passing an empty array to render an empty state
-        renderListings([]);*/
-        var popup = new mapboxgl.Popup({
-            closeButton: false,
-            closeOnClick: false
-        });
+        function goToPoint(obj, name) {
+            for (var i = 0; i < obj.length; i++)
+                if (obj[i].properties.Name.toLowerCase() === name) {
+                    flyToStore(obj[i]);
+                }
+            return null;
+        }
         map.on('load', function () {
             map.addControl(new mapboxgl.GeolocateControl({
                 positionOptions: {
@@ -402,7 +398,7 @@ var MapService = /** @class */ (function () {
                 'paint': {
                     'circle-radius': {
                         'base': 2,
-                        'stops': [[8, 3], [16, 180]]
+                        'stops': [[3, 3], [16, 32]]
                     },
                     'circle-color': 'rgb(84,48,5)'
                 },
@@ -456,7 +452,7 @@ var MapService = /** @class */ (function () {
                 'paint': {
                     'circle-radius': {
                         'base': 2,
-                        'stops': [[8, 3], [16, 180]]
+                        'stops': [[3, 3], [16, 32]]
                     },
                     'circle-color': '#8c510a'
                 },
@@ -511,7 +507,7 @@ var MapService = /** @class */ (function () {
                 'paint': {
                     'circle-radius': {
                         'base': 2,
-                        'stops': [[8, 3], [16, 180]]
+                        'stops': [[3, 3], [16, 32]]
                     },
                     'circle-color': '#bf812d'
                 },
@@ -565,7 +561,7 @@ var MapService = /** @class */ (function () {
                 'paint': {
                     'circle-radius': {
                         'base': 2,
-                        'stops': [[8, 3], [16, 180]]
+                        'stops': [[3, 3], [16, 32]]
                     },
                     'circle-color': '#A57D28'
                 },
@@ -619,7 +615,7 @@ var MapService = /** @class */ (function () {
                 'paint': {
                     'circle-radius': {
                         'base': 2,
-                        'stops': [[8, 3], [16, 180]]
+                        'stops': [[3, 3], [16, 32]]
                     },
                     'circle-color': '#dea613'
                 },
@@ -673,7 +669,7 @@ var MapService = /** @class */ (function () {
                 'paint': {
                     'circle-radius': {
                         'base': 2,
-                        'stops': [[8, 3], [16, 180]]
+                        'stops': [[3, 3], [16, 32]]
                     },
                     'circle-color': '#b1200f'
                 },
@@ -727,7 +723,7 @@ var MapService = /** @class */ (function () {
                 'paint': {
                     'circle-radius': {
                         'base': 2,
-                        'stops': [[8, 3], [16, 180]]
+                        'stops': [[3, 3], [16, 32]]
                     },
                     'circle-color': '#fa482e'
                 },
@@ -781,7 +777,7 @@ var MapService = /** @class */ (function () {
                 'paint': {
                     'circle-radius': {
                         'base': 2,
-                        'stops': [[8, 3], [16, 180]]
+                        'stops': [[3, 3], [16, 32]]
                     },
                     'circle-color': '#f4a32e'
                 },
@@ -835,7 +831,7 @@ var MapService = /** @class */ (function () {
                 'paint': {
                     'circle-radius': {
                         'base': 2,
-                        'stops': [[8, 3], [16, 180]]
+                        'stops': [[3, 3], [16, 32]]
                     },
                     'circle-color': '#80cdc1'
                 },
@@ -878,7 +874,7 @@ var MapService = /** @class */ (function () {
                 type: 'vector',
                 url: 'mapbox://dagsson.cjgxsaekx0cdv33o8zncly704-062up'
             });
-            map.addLayer({
+            var svin = map.addLayer({
                 'id': 'Svín',
                 'icon': '../assets/img/010-animals-2.png',
                 'type': 'circle',
@@ -889,7 +885,7 @@ var MapService = /** @class */ (function () {
                 'paint': {
                     'circle-radius': {
                         'base': 2,
-                        'stops': [[8, 3], [16, 180]]
+                        'stops': [[3, 3], [16, 32]]
                     },
                     'circle-color': '#35978f'
                 },
@@ -905,6 +901,7 @@ var MapService = /** @class */ (function () {
                 document.getElementById('card-heading').setAttribute('style', 'background-color: #35978f');
                 var clickedPoint = e.features[0];
                 flyToStore(clickedPoint);
+                console.log(svin);
             });
             // Change the cursor to a pointer when the mouse is over the states layer.
             map.on('mouseenter', 'Svín', function (e) {
@@ -943,7 +940,7 @@ var MapService = /** @class */ (function () {
                 'paint': {
                     'circle-radius': {
                         'base': 2,
-                        'stops': [[8, 3], [16, 180]]
+                        'stops': [[3, 3], [16, 32]]
                     },
                     'circle-color': '#01665e'
                 },
@@ -981,58 +978,60 @@ var MapService = /** @class */ (function () {
                 map.getCanvas().style.cursor = '';
                 popup.remove();
             });
+            var tabImg = ['../assets/img/011-animals.png', '../assets/img/007-animals-5.png', '../assets/img/003-sea.png', '../assets/img/009-animals-3.png', '../assets/img/006-food-1.png', '../assets/img/008-animals-4.png', '../assets/img/001-transport.png', '../assets/img/002-animals-1.png', '../assets/img/004-nature.png', '../assets/img/010-animals-2.png', '../assets/img/005-food.png'];
+            var toggleableLayerIds = ['Nautgripir', 'Sauðfé', 'Þörungar', 'Hestar', 'Fiskeldi', 'Alifuglar', 'Skip', 'Geitur', 'Matjurtir', 'Svín', 'Skelfiskur'];
+            for (var i = 0; i < toggleableLayerIds.length; i++) {
+                var id = toggleableLayerIds[i];
+                var foodicon = document.createElement('img');
+                var link = document.createElement('a');
+                link.textContent = id;
+                link.appendChild(foodicon);
+                link.style.display = "grid";
+                link.style.color = "black";
+                link.style.backgroundColor = "white";
+                link.style.padding = "15px";
+                link.style.fontFamily = "Source Sans Pro";
+                link.style.width = '90px';
+                foodicon.setAttribute('src', tabImg[i]);
+                foodicon.style.height = "25px";
+                foodicon.style.margin = "10px auto 0px";
+                foodicon.style.opacity = "0.3";
+                var features = map.getSource('skelfiskur');
+                link.onclick = function (e) {
+                    console.log(map.getSource('hross'));
+                    var clickedLayer = this.textContent;
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var bgColor = map.getPaintProperty(clickedLayer, 'circle-color');
+                    var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+                    if (visibility === 'none') {
+                        this.className = 'pp-tab';
+                        map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+                        this.style.color = "white";
+                        this.style.backgroundColor = bgColor;
+                    }
+                    else {
+                        this.className = 'pp-tab active';
+                        map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+                        this.style.color = "black";
+                        this.style.borderColor = "lightgray";
+                        this.style.backgroundColor = "white";
+                    }
+                };
+                var layers = document.getElementById('menu');
+                layers.appendChild(link);
+            }
         });
-        var tabImg = ['../assets/img/011-animals.png', '../assets/img/007-animals-5.png', '../assets/img/003-sea.png', '../assets/img/009-animals-3.png', '../assets/img/006-food-1.png', '../assets/img/008-animals-4.png', '../assets/img/001-transport.png', '../assets/img/002-animals-1.png', '../assets/img/004-nature.png', '../assets/img/010-animals-2.png', '../assets/img/005-food.png'];
-        var toggleableLayerIds = ['Nautgripir', 'Sauðfé', 'Þörungar', 'Hestar', 'Fiskeldi', 'Alifuglar', 'Skip', 'Geitur', 'Matjurtir', 'Svín', 'Skelfiskur'];
-        for (var i = 0; i < toggleableLayerIds.length; i++) {
-            var id = toggleableLayerIds[i];
-            var foodicon = document.createElement('img');
-            var link = document.createElement('a');
-            link.textContent = id;
-            link.appendChild(foodicon);
-            link.style.display = "grid";
-            link.style.color = "black";
-            link.style.backgroundColor = "white";
-            link.style.padding = "15px";
-            link.style.fontFamily = "Source Sans Pro";
-            link.style.width = '90px';
-            foodicon.setAttribute('src', tabImg[i]);
-            foodicon.style.height = "25px";
-            foodicon.style.margin = "10px auto 0px";
-            foodicon.style.opacity = "0.3";
-            var features = map.getSource('skelfiskur');
-            link.onclick = function (e) {
-                console.log(map.getSource('hross'));
-                var clickedLayer = this.textContent;
-                e.preventDefault();
-                e.stopPropagation();
-                var bgColor = map.getPaintProperty(clickedLayer, 'circle-color');
-                var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
-                if (visibility === 'none') {
-                    this.className = 'pp-tab';
-                    map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-                    this.style.color = "white";
-                    this.style.backgroundColor = bgColor;
-                }
-                else {
-                    this.className = 'pp-tab active';
-                    map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-                    this.style.color = "black";
-                    this.style.borderColor = "lightgray";
-                    this.style.backgroundColor = "white";
-                }
-            };
-            var layers = document.getElementById('menu');
-            layers.appendChild(link);
-        }
     };
+    ;
     MapService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* Injectable */])(),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]])
     ], MapService);
     return MapService;
 }());
 
+;
 
 
 /***/ }),
@@ -1077,7 +1076,15 @@ var FOOD_LIST = [
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 var environment = {
     production: false,
-    MAPBOX_API_KEY: 'pk.eyJ1IjoiZGFnc3NvbiIsImEiOiJjajk0MTRqdWIzZGxwMzNycGtreDhxMmRxIn0.0zk_7FSvF_LlQ0AD2cChWQ'
+    MAPBOX_API_KEY: 'pk.eyJ1IjoiZGFnc3NvbiIsImEiOiJjajk0MTRqdWIzZGxwMzNycGtreDhxMmRxIn0.0zk_7FSvF_LlQ0AD2cChWQ',
+    firebase: {
+        apiKey: "AIzaSyADcYBoe212jY2BBAukN7fRqAL1zpHw3aA",
+        authDomain: "eaticeland.firebaseapp.com",
+        databaseURL: "https://eaticeland.firebaseio.com",
+        projectId: "eaticeland",
+        storageBucket: "eaticeland.appspot.com",
+        messagingSenderId: "304716417170"
+    }
 };
 
 
