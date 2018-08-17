@@ -18,8 +18,7 @@ export class MapComponent implements OnInit {
   food: any;
 
   ngOnInit() {
-    this._mapService.getMap()
-    
-  }
+    this._mapService.getMap();
+   }
 
   }

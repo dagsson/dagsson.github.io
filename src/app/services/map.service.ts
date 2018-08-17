@@ -14,12 +14,7 @@ var listinn = [];
 var apiToken = environment.MAPBOX_API_KEY;
 @Injectable()
 export class MapService {
-  public producer: object; 
-  public setTest(value: object) {
-      this.producer = value;
-      console.log(this.producer.geometry.coordinates);
-  }
-
+  public producer: object 
   constructor (
     private http: HttpClient
   ) {}
@@ -449,7 +444,7 @@ getMap() {
             url: 'mapbox://dagsson.cjgxs9knd0b292xo8mn0yql01-93dnm'
         });
         map.addLayer({
-            'id': 'Skip',
+            'id': 'Afli',
             'icon': '',
             'type': 'circle',
             'source': 'skip',
@@ -478,7 +473,7 @@ getMap() {
         });
     
     // Change the cursor to a pointer when the mouse is over the states layer.
-    map.on('mouseenter', 'Skip', function (e) {
+    map.on('mouseenter', 'Afli', function (e) {
         map.getCanvas().style.cursor = 'pointer';
         var coordinates = e.features[0].geometry.coordinates.slice();
 
@@ -497,7 +492,7 @@ getMap() {
       });
   
       // Change it back to a pointer when it leaves.
-      map.on('mouseleave', 'Skip', function () {
+      map.on('mouseleave', 'Afli', function () {
           map.getCanvas().style.cursor = '';
           popup.remove();
       });
@@ -745,7 +740,7 @@ getMap() {
         });
 
       var tabImg = [ '../assets/img/011-animals.png', '../assets/img/007-animals-5.png', '../assets/img/003-sea.png', '../assets/img/009-animals-3.png', '../assets/img/006-food-1.png', '../assets/img/008-animals-4.png', '../assets/img/001-transport.png', '../assets/img/002-animals-1.png', '../assets/img/004-nature.png', '../assets/img/010-animals-2.png', '../assets/img/005-food.png'];
-      var toggleableLayerIds = [ 'Nautgripir', 'Sauðfé', 'Þörungar', 'Hestar', 'Fiskeldi', 'Alifuglar', 'Skip', 'Geitur', 'Matjurtir', 'Svín', 'Skelfiskur' ];
+      var toggleableLayerIds = [ 'Nautgripir', 'Sauðfé', 'Þörungar', 'Hestar', 'Fiskeldi', 'Alifuglar', 'Afli', 'Geitur', 'Matjurtir', 'Svín', 'Skelfiskur' ];
       
 
       for (var i = 0; i < toggleableLayerIds.length; i++) {

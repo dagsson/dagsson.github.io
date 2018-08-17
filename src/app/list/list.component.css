@@ -16,7 +16,11 @@
 nav {
     font-family: 'Source Sans Pro', sans-serif;
     padding: 10px 50px;
-}
+    display: inline-block;
+    width: 100%;
+    padding: 0px;
+    border-bottom: 5px solid #d8d7d7;
+  }
 
 #navbarSupportedContent ul {
     margin: 0 auto;
@@ -57,12 +61,17 @@ input {
 input[type=text] {
   background-color: #f1f1f1;
   width: 100%;
+  margin-top: 15px;
 }
 
 input[type=button] {
   background-color: DodgerBlue;
   color: #fff;
   cursor: pointer;
+}
+
+input[type=text]:focus, input[type=button]:focus {
+  outline:0 !important;
 }
 
 .autocomplete-items {
@@ -93,5 +102,24 @@ input[type=button] {
   /*when navigating through the items using the arrow keys:*/
   background-color: DodgerBlue !important; 
   color: #ffffff; 
+}
+
+#menu {
+  display: -webkit-inline-box;
+  margin-top: 50px;
+}
+
+.navbar-brand {
+  margin-top: 30px;
+}
+
+.d-inline-block {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+.navbar h2 {
+  margin-top: 50px;
 }
   
