@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Matarlandslag
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.2.
@@ -25,3 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+=======
+# dagsson.github.io
+test
+>>>>>>> a9f589e493a2f618a6a563de7042314a5616b30a
