@@ -131,7 +131,7 @@ var AppModule = /** @class */ (function () {
 /***/ "./src/app/list/list.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ".sidebar-header {\n    padding: 5%;\n    text-align: center;\n}\n\n.sidebar-header h3 {\n    font-family: 'Source Sans Pro', sans-serif;\n    color: white;\n}\n\n.pp-leit {\n    color: rgb(1, 102, 94);\n    border-color: rgb(1, 102, 94)\n}\n\nnav {\n    font-family: 'Source Sans Pro', sans-serif;\n    padding: 10px 50px;\n    display: inline-block;\n    width: 100%;\n    padding: 0px;\n    border-bottom: 5px solid #d8d7d7;\n  }\n\n#navbarSupportedContent ul {\n    margin: 0 auto;\n}\n\n.list-dropdown {\n  position: absolute;\n  z-index: 100;\n  width: 100%;\n  background: white;\n  color: black;\n  text-align: left;\n  overflow-y: auto;\n  max-height: 400px;\n}\n\n.producers {\n  padding: 10px;\n}\n\n.producers:hover {\n  background:#c2c2c2\n}\n\n.autocomplete {\n  /*the container must be positioned relative:*/\n  position: relative;\n  display: inline-block;\n}\n\ninput {\n  border: 1px solid transparent;\n  background-color: #f1f1f1;\n  padding: 10px;\n  font-size: 16px;\n}\n\ninput[type=text] {\n  background-color: #f1f1f1;\n  width: 100%;\n  margin-top: 15px;\n}\n\ninput[type=button] {\n  background-color: DodgerBlue;\n  color: #fff;\n  cursor: pointer;\n}\n\ninput[type=text]:focus, input[type=button]:focus {\n  outline:0 !important;\n}\n\n.autocomplete-items {\n  position: absolute;\n  border: 1px solid #d4d4d4;\n  border-bottom: none;\n  border-top: none;\n  z-index: 99;\n  /*position the autocomplete items to be the same width as the container:*/\n  top: 100%;\n  left: 0;\n  right: 0;\n}\n\n.autocomplete-items div {\n  padding: 10px;\n  cursor: pointer;\n  background-color: #fff; \n  border-bottom: 1px solid #d4d4d4; \n}\n\n.autocomplete-items div:hover {\n  /*when hovering an item:*/\n  background-color: #e9e9e9; \n}\n\n.autocomplete-active {\n  /*when navigating through the items using the arrow keys:*/\n  background-color: DodgerBlue !important; \n  color: #ffffff; \n}\n\n#menu {\n  display: -webkit-inline-box;\n  margin-top: 50px;\n}\n\n.navbar-brand {\n  margin-top: 30px;\n}\n\n.d-inline-block {\n  position: absolute;\n  left: 20px;\n  top: 20px;\n}\n\n.navbar h2 {\n  margin-top: 50px;\n}\n  "
+module.exports = ".sidebar-header {\n    padding: 5%;\n    text-align: center;\n}\n\n.sidebar-header h3 {\n    font-family: 'Source Sans Pro', sans-serif;\n    color: white;\n}\n\n.pp-leit {\n    color: rgb(1, 102, 94);\n    border-color: rgb(1, 102, 94)\n}\n\nnav {\n    font-family: 'Source Sans Pro', sans-serif;\n    padding: 10px 50px;\n    display: inline-block;\n    width: 100%;\n    padding: 0px;\n    border-bottom: 5px solid #d8d7d7;\n  }\n\n#navbarSupportedContent ul {\n    margin: 0 auto;\n}\n\n.list-dropdown {\n  position: absolute;\n  z-index: 100;\n  width: 100%;\n  background: white;\n  color: black;\n  text-align: left;\n  overflow-y: auto;\n  max-height: 400px;\n}\n\n.producers {\n  padding: 10px;\n}\n\n.producers:hover {\n  background:#c2c2c2\n}\n\n.autocomplete {\n  /*the container must be positioned relative:*/\n  position: relative;\n  display: inline-block;\n}\n\ninput {\n  border: 1px solid transparent;\n  background-color: #f1f1f1;\n  padding: 10px;\n  font-size: 16px;\n}\n\ninput[type=text] {\n  background-color: #f1f1f1;\n  width: 100%;\n  margin-top: 25px;\n}\n\ninput[type=button] {\n  background-color: DodgerBlue;\n  color: #fff;\n  cursor: pointer;\n}\n\ninput[type=text]:focus, input[type=button]:focus {\n  outline:0 !important;\n}\n\n.autocomplete-items {\n  position: absolute;\n  border: 1px solid #d4d4d4;\n  border-bottom: none;\n  border-top: none;\n  z-index: 99;\n  /*position the autocomplete items to be the same width as the container:*/\n  top: 100%;\n  left: 0;\n  right: 0;\n}\n\n.autocomplete-items div {\n  padding: 10px;\n  cursor: pointer;\n  background-color: #fff; \n  border-bottom: 1px solid #d4d4d4; \n}\n\n.autocomplete-items div:hover {\n  /*when hovering an item:*/\n  background-color: #e9e9e9; \n}\n\n.autocomplete-active {\n  /*when navigating through the items using the arrow keys:*/\n  background-color: DodgerBlue !important; \n  color: #ffffff; \n}\n\n#menu {\n  display: -webkit-inline-box;\n  margin-top: 50px;\n}\n\n.navbar-brand {\n  margin-top: 30px;\n}\n\n.d-inline-block {\n  position: absolute;\n  left: 20px;\n  top: 20px;\n}\n\n.navbar h2 {\n  margin-top: 50px;\n  font-size: 2.5 rem;\n  letter-spacing: 12px;\n}\n  "
 
 /***/ }),
 
@@ -169,8 +169,9 @@ var ListComponent = /** @class */ (function () {
         this.http = http;
         this._mapService = _mapService;
         this.token = 'pk.eyJ1IjoiZGFnc3NvbiIsImEiOiJjajk0MTRqdWIzZGxwMzNycGtreDhxMmRxIn0.0zk_7FSvF_LlQ0AD2cChWQ';
-        this.urls = ['https://api.mapbox.com/datasets/v1/dagsson/cjgxs7hoc07ly2wmx7wc7qjz9/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjgxrynuy1nhn2wmoqz4sn8fu/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjgxsaekx0cdv33o8zncly704/features'];
+        this.urls = ['https://api.mapbox.com/datasets/v1/dagsson/cjgxrynuy1nhn2wmoqz4sn8fu/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjgxsaekx0cdv33o8zncly704/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjl8568s70jg12vlgnxyw0p9g/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjgxs7hoc07ly2wmx7wc7qjz9/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjl84jijf0inv2uruidekzdw1/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjl84fisc05zf2qnz5x84dgjx/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjl848pqj0j0s2ql3t6s5ukg4/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjl83jmld0j6m2vqkzr56ngw5/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjl83gvwh0iwe2vrui3axviv4/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjl83eiez0ivr2vrusczd8v9r/features'];
         this.filtered = [];
+        this.allresults = [];
         this.showDropDown = false;
         this.food = __WEBPACK_IMPORTED_MODULE_1__shared_mock_food__["a" /* FOOD_LIST */];
     }
@@ -189,10 +190,13 @@ var ListComponent = /** @class */ (function () {
             this.http.get(this.urls[i] + '?access_token=' + this.token).subscribe(function (val) {
                 _this.response = val['features'];
                 _this.posts = _this.response.map(function (response) { return response.properties.Name.trim().toLowerCase(); });
+                Array.prototype.push.apply(_this.allresults, _this.posts);
             });
         }
         ;
-        this.filtered = this.posts.filter(function (post) { return post.indexOf(value) > -1 && value.length > 2; });
+        console.log(this.allresults);
+        this.filtered = this.allresults.filter(function (post) { return post.indexOf(value) > -1 && value.length > 2; });
+        this.allresults = [];
     };
     ListComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
@@ -338,7 +342,7 @@ var MapService = /** @class */ (function () {
             style: 'mapbox://styles/dagsson/cj99p8osy3in82smvtx2ie7x8',
             zoom: 5.55,
             minZoom: 5.6,
-            center: [-19.058391, 64.970529]
+            center: [-19.018391, 65.900529]
         });
         map.addControl(new mapboxgl.AttributionControl(), 'top-left');
         var inputElement = document.getElementById('theinput');
@@ -356,7 +360,7 @@ var MapService = /** @class */ (function () {
         }
         searchBtn.addEventListener('click', function (r) {
             var token = 'pk.eyJ1IjoiZGFnc3NvbiIsImEiOiJjajk0MTRqdWIzZGxwMzNycGtreDhxMmRxIn0.0zk_7FSvF_LlQ0AD2cChWQ';
-            var urls = ['https://api.mapbox.com/datasets/v1/dagsson/cjgxs7hoc07ly2wmx7wc7qjz9/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjgxrynuy1nhn2wmoqz4sn8fu/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjgxsaekx0cdv33o8zncly704/features'];
+            var urls = ['https://api.mapbox.com/datasets/v1/dagsson/cjgxrynuy1nhn2wmoqz4sn8fu/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjgxsaekx0cdv33o8zncly704/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjl8568s70jg12vlgnxyw0p9g/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjgxs7hoc07ly2wmx7wc7qjz9/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjl84jijf0inv2uruidekzdw1/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjl84fisc05zf2qnz5x84dgjx/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjl848pqj0j0s2ql3t6s5ukg4/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjl83jmld0j6m2vqkzr56ngw5/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjl83gvwh0iwe2vrui3axviv4/features', 'https://api.mapbox.com/datasets/v1/dagsson/cjl83eiez0ivr2vrusczd8v9r/features'];
             var goTo = inputElement.value;
             var response;
             for (var i in urls) {
@@ -385,7 +389,7 @@ var MapService = /** @class */ (function () {
             map.addControl(nav, 'bottom-right');
             map.addSource('naut', {
                 type: 'vector',
-                url: 'mapbox://dagsson.cj98f0o860q2w33t4cyvvfhib-5qqz2'
+                url: 'mapbox://dagsson.cjl84fisc05zf2qnz5x84dgjx-53nf3'
             });
             map.addLayer({
                 'id': 'Nautgripir',
@@ -402,7 +406,7 @@ var MapService = /** @class */ (function () {
                     },
                     'circle-color': 'rgb(84,48,5)'
                 },
-                'source-layer': 'nautgripir_merged'
+                'source-layer': 'nautgripir_ag2018'
             });
             map.on('click', 'Nautgripir', function (e) {
                 document.getElementById('info').innerHTML = e.features[0].properties.Name;
@@ -439,7 +443,7 @@ var MapService = /** @class */ (function () {
             });
             map.addSource('kind', {
                 type: 'vector',
-                url: 'mapbox://dagsson.cjgxs52m90blu2wqn6cn9zm7y-3zxws'
+                url: 'mapbox://dagsson.cjl84jijf0inv2uruidekzdw1-60rdm'
             });
             map.addLayer({
                 'id': 'Sauðfé',
@@ -456,7 +460,7 @@ var MapService = /** @class */ (function () {
                     },
                     'circle-color': '#8c510a'
                 },
-                'source-layer': 'Saudfe_merged'
+                'source-layer': 'saudfe_ag2018'
             });
             map.on('click', 'Sauðfé', function (e) {
                 document.getElementById('info').innerHTML = e.features[0].properties.Name;
@@ -548,7 +552,7 @@ var MapService = /** @class */ (function () {
             // Hross
             map.addSource('hross', {
                 type: 'vector',
-                url: 'mapbox://dagsson.cjgxrynuy1nhn2wmoqz4sn8fu-74xa4'
+                url: 'mapbox://dagsson.cjl83lx2w02oo31pbmccnrd9g-1ddsc'
             });
             map.addLayer({
                 'id': 'Hestar',
@@ -565,7 +569,7 @@ var MapService = /** @class */ (function () {
                     },
                     'circle-color': '#A57D28'
                 },
-                'source-layer': 'Hross_merged'
+                'source-layer': 'hross_ag2018'
             });
             map.on('click', 'Hestar', function (e) {
                 document.getElementById('info').innerHTML = e.features[0].properties.Name;
@@ -602,7 +606,7 @@ var MapService = /** @class */ (function () {
             // Fiskeldi
             map.addSource('fiskeldi', {
                 type: 'vector',
-                url: 'mapbox://dagsson.cjgxrxq5x0bpb2wosmeh8jjvi-7q4sm'
+                url: 'mapbox://dagsson.cjl83gvwh0iwe2vrui3axviv4-9jo3e'
             });
             map.addLayer({
                 'id': 'Fiskeldi',
@@ -619,7 +623,7 @@ var MapService = /** @class */ (function () {
                     },
                     'circle-color': '#dea613'
                 },
-                'source-layer': 'Fiskeldi_merged'
+                'source-layer': 'fiskeldi_ag2018'
             });
             map.on('click', 'Fiskeldi', function (e) {
                 document.getElementById('info').innerHTML = e.features[0].properties.Name;
@@ -656,7 +660,7 @@ var MapService = /** @class */ (function () {
             // Alifuglar
             map.addSource('alifuglar', {
                 type: 'vector',
-                url: 'mapbox://dagsson.cjgxqopwj0acw2wpew0uzhyxk-6eb44'
+                url: 'mapbox://dagsson.cjl83eiez0ivr2vrusczd8v9r-890x1'
             });
             map.addLayer({
                 'id': 'Alifuglar',
@@ -673,7 +677,7 @@ var MapService = /** @class */ (function () {
                     },
                     'circle-color': '#b1200f'
                 },
-                'source-layer': 'Alifuglar_merged'
+                'source-layer': 'alifuglar_ag2018'
             });
             map.on('click', 'Alifuglar', function (e) {
                 document.getElementById('info').innerHTML = e.features[0].properties.Name;
@@ -710,7 +714,7 @@ var MapService = /** @class */ (function () {
             // Skip
             map.addSource('skip', {
                 type: 'vector',
-                url: 'mapbox://dagsson.cjgxs9knd0b292xo8mn0yql01-93dnm'
+                url: 'mapbox://dagsson.cjl8568s70jg12vlgnxyw0p9g-27p4q'
             });
             map.addLayer({
                 'id': 'Afli',
@@ -727,13 +731,13 @@ var MapService = /** @class */ (function () {
                     },
                     'circle-color': '#fa482e'
                 },
-                'source-layer': 'Skip_merged'
+                'source-layer': 'skip_ag2018'
             });
-            map.on('click', 'Skip', function (e) {
+            map.on('click', 'Afli', function (e) {
                 document.getElementById('info').innerHTML = e.features[0].properties.Name;
                 document.getElementById('foodtype').innerHTML = e.features[0].properties.Type;
                 document.getElementById('foodtypeII').innerHTML = e.features[0].properties.Size;
-                document.getElementById('location').innerHTML = e.features[0].properties.Place;
+                document.getElementById('location').innerHTML = e.features[0].properties.heimahofn;
                 document.getElementById('dashboard').setAttribute('style', 'bottom:115px');
                 document.getElementById('foodinc').setAttribute('src', '../assets/img/001-transport-w.png');
                 document.getElementById('card-heading').setAttribute('style', 'background-color: #fa482e');
@@ -764,7 +768,7 @@ var MapService = /** @class */ (function () {
             // Geitur
             map.addSource('geitur', {
                 type: 'vector',
-                url: 'mapbox://dagsson.cjgxs6mf10b7m33osu7vpoe1u-5mgi9'
+                url: 'mapbox://dagsson.cjl83jmld0j6m2vqkzr56ngw5-8w1w7'
             });
             map.addLayer({
                 'id': 'Geitur',
@@ -781,7 +785,7 @@ var MapService = /** @class */ (function () {
                     },
                     'circle-color': '#f4a32e'
                 },
-                'source-layer': 'Geitur_merged'
+                'source-layer': 'geitur_ag2018'
             });
             map.on('click', 'Geitur', function (e) {
                 document.getElementById('info').innerHTML = e.features[0].properties.Name;
@@ -818,7 +822,7 @@ var MapService = /** @class */ (function () {
             // Matjurtir
             map.addSource('matjurtir', {
                 type: 'vector',
-                url: 'mapbox://dagsson.cjgxs04570gnp2qqtqgco9o1z-45m5i'
+                url: 'mapbox://dagsson.cjl848pqj0j0s2ql3t6s5ukg4-9ct42'
             });
             map.addLayer({
                 'id': 'Matjurtir',
@@ -835,7 +839,7 @@ var MapService = /** @class */ (function () {
                     },
                     'circle-color': '#80cdc1'
                 },
-                'source-layer': 'Matjurtir_merged'
+                'source-layer': 'matjurtir_ag2018'
             });
             map.on('click', 'Matjurtir', function (e) {
                 document.getElementById('info').innerHTML = e.features[0].properties.Name;
@@ -872,7 +876,7 @@ var MapService = /** @class */ (function () {
             // Svin
             map.addSource('svin', {
                 type: 'vector',
-                url: 'mapbox://dagsson.cjgxsaekx0cdv33o8zncly704-062up'
+                url: 'mapbox://dagsson.cjl865kyd0jc72qqknchl205x-6brmo'
             });
             var svin = map.addLayer({
                 'id': 'Svín',
@@ -889,7 +893,7 @@ var MapService = /** @class */ (function () {
                     },
                     'circle-color': '#35978f'
                 },
-                'source-layer': 'Svin_merged'
+                'source-layer': 'svin_ag2018'
             });
             map.on('click', 'Svín', function (e) {
                 document.getElementById('info').innerHTML = e.features[0].properties.Name;
@@ -927,7 +931,7 @@ var MapService = /** @class */ (function () {
             // Skelfiskur
             map.addSource('skelfiskur', {
                 type: 'vector',
-                url: 'mapbox://dagsson.cjgxs7hoc07ly2wmx7wc7qjz9-134iq'
+                url: 'mapbox://dagsson.cjl84n8gn0iwv32piimp4c3y8-5j5mq'
             });
             map.addLayer({
                 'id': 'Skelfiskur',
@@ -944,7 +948,7 @@ var MapService = /** @class */ (function () {
                     },
                     'circle-color': '#01665e'
                 },
-                'source-layer': 'Skelfiskur_merged'
+                'source-layer': 'skelfiskur_ag2018'
             });
             map.on('click', 'Skelfiskur', function (e) {
                 document.getElementById('info').innerHTML = e.features[0].properties.Name;
